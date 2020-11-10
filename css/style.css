@@ -1,0 +1,52 @@
+/**********BASIC**********/
+body {
+    font-family: Montserrat, sans-serif;
+}
+.container {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+/***********HEADER************/
+.header {
+    background: rgba(94, 93, 88, 0.6);
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-link {
+    display: flex;
+}
+.h-wrap {
+    height: 65px;
+    width: 60px;
+    background-color: #18CFAB;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.h-letter {
+    color: white;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.logo-text {
+    align-self: center;
+    color: white;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+}
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+.nav-item {
+    padding: 50px 0;
+    margin-right: 20px;
+}
