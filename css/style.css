@@ -596,14 +596,20 @@ body {
     line-height: 30px;
     color: #BBBBBB;
 }
-.reviewer-photo-frame {
+.slider-reviewer-photo-frame {
     border-radius: 50%;
+    border: 5px solid rgba(31, 218, 181, 0.2);
+}
+.reviewer-photo-frame {
     width: 140px;
     height: 140px;
+    border-radius: 50%;
+    border: 10px solid rgba(31, 218, 181, 0.2);
+    /* transform: scale(2); */
 }
 .reviewer-photo {
-    width: 140px;
-    height: 140px;
+    width: 142px;
+    height: 142px;
 }
 
 /************SLIDER*************/
