@@ -140,6 +140,28 @@ $('.services-list').click((event) => {
         });
         $serviceInfoItems.filter(`[data-service-class=${chosedServiceCategory}]`).addClass('service-info-active');
     };
-    
+});
 
-})
+/*****************SLIDER***************/
+
+$(document).ready(function(){
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav',
+    });
+    $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true,
+        touchMove: false,
+        appendArrows: $('.slider-nav'),
+        prevArrow: $(".slick-prev-btn-custom"),
+        nextArrow: $(".slick-next-btn-custom"),
+    });
+});
