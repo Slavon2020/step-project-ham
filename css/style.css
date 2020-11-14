@@ -558,11 +558,7 @@ body {
     background-size: cover;
     position: relative;
 }
-/* .reviews .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
+
 .reviews-heading {
     font-weight: 400;
     font-size: 36px;
@@ -627,15 +623,27 @@ body {
 .slider-for {
     margin-bottom: 60px;
 }
+.slider-nav-frame {
+    position: relative;
+    width: 350px;
+    margin: 0 auto;
+}
+.slider-nav {
+    width: 350px;
+    margin: 0 auto;
+}
 .slick-slide {
     outline: none;
+    margin: 0 35px;
 }
+
 button[id*='slick-slide-control'] {
     display: none;
 }
-.slick-center {
+.slider-reviewer-photo-frame.slick-slide.slick-current.slick-active.slick-center  {
     transform: translateY(-15px);
 }
+
 .slick-prev-btn-custom {
     width: 30px;
     height: 30px;
@@ -643,8 +651,8 @@ button[id*='slick-slide-control'] {
     border: 1px solid #BBBBBB;
     outline: none;
     position: absolute;
-    bottom: 115px;
-    left: 310px;
+    bottom: 18px;
+    left: -64px;
 }
 .slick-prev-btn-custom:hover {
     background-color: #18CFAB;
@@ -667,8 +675,8 @@ button[id*='slick-slide-control'] {
     border: 1px solid #BBBBBB;
     outline: none;
     position: absolute;
-    right: 310px;
-    bottom: 115px;
+    right: -64px;
+    bottom: 18px;
 }
 .slick-next-btn-custom:hover {
     background-color: #18CFAB;

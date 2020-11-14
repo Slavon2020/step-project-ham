@@ -142,7 +142,7 @@ $('.services-list').click((event) => {
     };
 });
 
-/*****************SLIDER***************/
+/*****************REVIEWS-SLIDER***************/
 
 $(document).ready(function(){
     $('.slider-for').slick({
@@ -163,5 +163,8 @@ $(document).ready(function(){
         appendArrows: $('.slider-nav'),
         prevArrow: $(".slick-prev-btn-custom"),
         nextArrow: $(".slick-next-btn-custom"),
+        variableWidth: true,
     });
 });
+
+
