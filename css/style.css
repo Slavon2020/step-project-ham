@@ -640,9 +640,10 @@ body {
     margin-bottom: 45px;
 }
 .slider-nav-frame {
-    position: relative;
-    width: 350px;
+    width: 500px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
 }
 .slider-nav {
     width: 350px;
@@ -669,9 +670,7 @@ button[id*='slick-slide-control'] {
     background: rgba(0, 0, 0, 0.0001);
     border: 1px solid #BBBBBB;
     outline: none;
-    position: absolute;
-    bottom: 18px;
-    left: -64px;
+    transform: translateY(12px);
 }
 .slick-prev-btn-custom:hover {
     background-color: #18CFAB;
@@ -693,9 +692,7 @@ button[id*='slick-slide-control'] {
     background: rgba(0, 0, 0, 0.0001);
     border: 1px solid #BBBBBB;
     outline: none;
-    position: absolute;
-    right: -64px;
-    bottom: 18px;
+    transform: translateY(12px);
 }
 .slick-next-btn-custom:hover {
     background-color: #18CFAB;
