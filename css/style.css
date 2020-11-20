@@ -730,8 +730,9 @@ button[id*='slick-slide-control'] {
     color: #AEAEAE; 
 }
 .copyright-company {
-    margin-right: 20px;
-    position: relative;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
 }
 .copyright-company::after {
     content: '';
@@ -739,9 +740,8 @@ button[id*='slick-slide-control'] {
     height: 15px;
     background-color:  #AEAEAE; 
     display: block;
-    position: absolute;
-    top: 5px;
-    right: -10px;
+    margin-left: 10px;
+
 }
 .copyright-reserved {
     text-transform: capitalize;
