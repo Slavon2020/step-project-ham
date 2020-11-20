@@ -1,72 +1,72 @@
 const additionalWorkElementsArray = [{
     dataWorkClass: 'graphic-design',
-    imageScr: 'images/work-image5.png',
+    imageScr: 'images/graphic-design-image3.jpg',
     workItemHeading: 'graphic design heading',
     workItemClass: 'graphic design'
 },
 {   
     dataWorkClass: 'graphic-design',
-    imageScr: 'images/work-image5.png',
+    imageScr: 'images/graphic-design-image4.jpg',
     workItemHeading: 'graphic design heading',
     workItemClass: 'graphic design'
 },
 {
     dataWorkClass: 'graphic-design',
-    imageScr: 'images/work-image5.png',
+    imageScr: 'images/graphic-design-image5.jpg',
     workItemHeading: 'graphic design heading',
     workItemClass: 'graphic design'
 },
 {
     dataWorkClass: 'web-design',
-    imageScr: 'images/work-image6.png',
+    imageScr: 'images/web-design-image3.jpg',
     workItemHeading: 'web design heading',
     workItemClass: 'web design'
 },
 {
     dataWorkClass: 'web-design',
-    imageScr: 'images/work-image6.png',
+    imageScr: 'images/web-design-image4.jpg',
     workItemHeading: 'web design heading',
     workItemClass: 'web design'
 },
 {
     dataWorkClass: 'web-design',
-    imageScr: 'images/work-image6.png',
+    imageScr: 'images/web-design-image5.jpg',
     workItemHeading: 'web design heading',
     workItemClass: 'web design'
 },
 {
     dataWorkClass: 'landing-pages',
-    imageScr: 'images/work-image7.png',
+    imageScr: 'images/landing-page-image4.jpg',
     workItemHeading: 'landing pages heading',
     workItemClass: 'landing pages'
 },
 {
     dataWorkClass: 'landing-pages',
-    imageScr: 'images/work-image7.png',
+    imageScr: 'images/landing-page-image5.jpg',
     workItemHeading: 'landing pages heading',
     workItemClass: 'landing pages'
 },
 {
     dataWorkClass: 'landing-pages',
-    imageScr: 'images/work-image7.png',
+    imageScr: 'images/landing-page-image6.jpg',
     workItemHeading: 'landing pages heading',
     workItemClass: 'landing pages'
 },
 {
     dataWorkClass: 'wordpress',
-    imageScr: 'images/work-image8.png',
+    imageScr: 'images/wordpress4.jpg',
     workItemHeading: 'wordpress heading',
     workItemClass: 'wordpress'
 },
 {
     dataWorkClass: 'wordpress',
-    imageScr: 'images/work-image8.png',
+    imageScr: 'images/wordpress5.jpg',
     workItemHeading: 'wordpress heading',
     workItemClass: 'wordpress'
 },
 {
     dataWorkClass: 'wordpress',
-    imageScr: 'images/work-image8.png',
+    imageScr: 'images/wordpress6.jpg',
     workItemHeading: 'wordpress heading',
     workItemClass: 'wordpress'
 },
@@ -103,12 +103,14 @@ const createHtmlToadd = (arr) => {
     return htmlToReturn;
 };
 
-$('.work-nav-list').click((event) => {
+$('.work-nav-list').mousedown((event) => {
     const $allWorkItems = $('.work-item');
     const choosedWorkCategory = event.target.dataset.workCategory;
     const $target = $(event.target);
-    $workCategories.css({'color': '#717171','border': '1px solid #DADADA'});
-    $target.css({'color': '#18CFAB','border': '2px solid #18CFAB'});
+
+    $workCategories.removeClass('work-nav-item-choosed');
+
+    $target.addClass('work-nav-item-choosed');
     if (choosedWorkCategory === 'all-work-categories') {
         $allWorkItems.css('display', 'block');
     } else {
@@ -123,7 +125,7 @@ $('.load-more-btn').click(() => {
     $('.load-more-btn').css('display', 'none');
 });
 
-$('.services-list').click((event) => {
+$('.services-list').mousedown((event) => {
     const $target = $(event.target);
     const $serviceInfoItems = $('.service-info');
     const chosedServiceCategory = event.target.dataset.serviceCategory;

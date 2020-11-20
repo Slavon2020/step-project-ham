@@ -27,8 +27,8 @@ body {
     display: flex;
 }
 .h-wrap {
-    height: 65px;
-    width: 60px;
+    height: 70px;
+    width: 80px;
     background-color: #18CFAB;
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
     display: flex;
@@ -69,7 +69,11 @@ body {
 }
 .nav-item-link:hover {
   color: #18CFAB;
-  border-bottom: 2px solid #18CFAB;
+  border-bottom: 2px solid #18CFAB; 
+}
+
+.header-search-icon:hover path {
+    fill: #18CFAB !important;
 }
 
 /*********BANNER********/
@@ -200,12 +204,14 @@ body {
     border: 1px solid #F2F2F2;
     font-size: 16px;
     line-height: 40px;
-    padding: 16px 20px;
     text-transform: capitalize;
     color: #717171;
+    padding: 20px 0;
 }
+
 .services-nav-item:hover {
     border: 1px solid #18CFAB;
+    cursor: pointer;
 }
 .service-info {
     display: none;
@@ -326,6 +332,14 @@ body {
     font-size: 14px;
     line-height: 42px;
     color: #717171;
+    box-sizing: border-box;
+}
+.work-nav-item:hover {
+    cursor: pointer;
+}
+.work-nav-item-choosed {
+    color: #18CFAB;
+    border-color: #18CFAB;
 }
 .work-nav-item:first-child {
     padding: 15px 30px;
@@ -508,6 +522,8 @@ body {
 }
 .article-img {
     display: block;
+    width: 263px;
+    height: 208px;
 }
 .article-bottom {
     width: 100%;
@@ -582,7 +598,13 @@ body {
     display: flex;
     justify-content: center;
 }
-.reviewer-text {
+.reviewer-name {
+    text-transform: uppercase;
+    color: #18CFAB;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.reviewer-text, .reviewer-position {
     margin-bottom: 40px;
     font-weight: 300;
     font-size: 16px;
@@ -590,29 +612,23 @@ body {
     color: #BBBBBB;
     text-align: center;
 }
-.reviewer-name {
-    text-transform: uppercase;
-    color: #18CFAB;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-.reviewer-position {
-    margin-bottom: 40px;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 30px;
-    color: #BBBBBB;
-}
+
 .slider-reviewer-photo-frame {
     border-radius: 50%;
     border: 5px solid rgba(31, 218, 181, 0.2);
+    overflow: hidden;
+
+}
+.slider-reviewer-photo {
+    width: 60px;
+    height: 60px;
 }
 .reviewer-photo-frame {
     width: 140px;
     height: 140px;
     border-radius: 50%;
     border: 10px solid rgba(31, 218, 181, 0.2);
-    /* transform: scale(2); */
+    overflow: hidden;
 }
 .reviewer-photo {
     width: 142px;
@@ -621,7 +637,7 @@ body {
 
 /************REVIEWS-SLIDER*************/
 .slider-for {
-    margin-bottom: 60px;
+    margin-bottom: 45px;
 }
 .slider-nav-frame {
     position: relative;
@@ -635,6 +651,9 @@ body {
 .slick-slide {
     outline: none;
     margin: 0 35px;
+}
+.slick-track {
+    padding-top: 15px;
 }
 
 button[id*='slick-slide-control'] {
