@@ -74,6 +74,7 @@ const additionalWorkElementsArray = [{
 
 const $workCategories = $('.work-nav-item');
 const $workItemsSection = $('.work-items');
+let choosedWorkCategoryEvent;
 
 const createHtmlToAdd = (arr) => {
     let htmlToReturn = arr.map(el => {
@@ -101,7 +102,8 @@ const createHtmlToAdd = (arr) => {
     return htmlToReturn;
 };
 
-$('.work-nav-list').mousedown((event) => {
+const chooseWorkItemsFunc = function (event) {
+    choosedWorkCategoryEvent = event;
     const $allWorkItems = $('.work-item');
     const choosedWorkCategory = event.target.dataset.workCategory;
     const $target = $(event.target);
@@ -115,12 +117,17 @@ $('.work-nav-list').mousedown((event) => {
         $allWorkItems.css('display', 'none');
         $allWorkItems.filter(`[data-work-class=${choosedWorkCategory}]`).css('display', 'block');
     };
+};
+
+$('.work-nav-list').mousedown((event) => {
+    chooseWorkItemsFunc(event);
 });
 
 $('.load-more-btn').click(() => {
     let htmlToAdd = createHtmlToAdd(additionalWorkElementsArray);
     $workItemsSection.append(htmlToAdd);
     $('.load-more-btn').css('display', 'none');
+    chooseWorkItemsFunc(choosedWorkCategoryEvent);
 });
 
 $('.services-list').mousedown((event) => {
