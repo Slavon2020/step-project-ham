@@ -79,6 +79,7 @@ body {
 }
 .header-search-icon:hover {
     fill:#18CFAB;
+    cursor: pointer;
 }
 
 /*********BANNER********/
