@@ -45,6 +45,7 @@ body {
 .logo-text {
     align-self: center;
     color: white;
+    font-size: 32px;
 }
 .logo-name {
     font-weight: 700;
