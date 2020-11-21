@@ -73,8 +73,12 @@ body {
   border-bottom: 2px solid #18CFAB; 
 }
 
-.header-search-icon:hover path {
-    fill: #18CFAB !important;
+.header-search-icon {
+    fill:#B8B8B8;
+    height: 25px;
+}
+.header-search-icon:hover {
+    fill:#18CFAB;
 }
 
 /*********BANNER********/
