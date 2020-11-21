@@ -35,12 +35,14 @@ body {
     justify-content: center;
     align-items: center;
     margin-right: 5px;
+    transform: rotate(30deg);
 }
 .h-letter {
     color: white;
     font-size: 40px;
     text-transform: uppercase;
     font-weight: 700;
+    transform: rotate(-30deg);
 }
 .logo-text {
     align-self: center;
