@@ -69,6 +69,81 @@ const additionalWorkElementsArray = [{
     imageScr: 'images/wordpress6.jpg',
     workItemHeading: 'wordpress heading',
     workItemClass: 'wordpress'
+}
+];
+
+const additionalWorkElementsArray2 = [
+{
+    dataWorkClass: 'graphic-design',
+    imageScr: 'images/graphic-design-image7.jpg',
+    workItemHeading: 'graphic design heading',
+    workItemClass: 'graphic design'
+},
+{   
+    dataWorkClass: 'graphic-design',
+    imageScr: 'images/graphic-design-image8.jpg',
+    workItemHeading: 'graphic design heading',
+    workItemClass: 'graphic design'
+},
+{
+    dataWorkClass: 'graphic-design',
+    imageScr: 'images/graphic-design-image9.jpg',
+    workItemHeading: 'graphic design heading',
+    workItemClass: 'graphic design'
+},
+{
+    dataWorkClass: 'web-design',
+    imageScr: 'images/web-design-image6.jpg',
+    workItemHeading: 'web design heading',
+    workItemClass: 'web design'
+},
+{
+    dataWorkClass: 'web-design',
+    imageScr: 'images/web-design-image7.jpg',
+    workItemHeading: 'web design heading',
+    workItemClass: 'web design'
+},
+{
+    dataWorkClass: 'web-design',
+    imageScr: 'images/web-design-image8.jpg',
+    workItemHeading: 'web design heading',
+    workItemClass: 'web design'
+},
+{
+    dataWorkClass: 'landing-pages',
+    imageScr: 'images/landing-page-image7.jpg',
+    workItemHeading: 'landing pages heading',
+    workItemClass: 'landing pages'
+},
+{
+    dataWorkClass: 'landing-pages',
+    imageScr: 'images/landing-page-image8.jpg',
+    workItemHeading: 'landing pages heading',
+    workItemClass: 'landing pages'
+},
+{
+    dataWorkClass: 'landing-pages',
+    imageScr: 'images/landing-page-image9.jpg',
+    workItemHeading: 'landing pages heading',
+    workItemClass: 'landing pages'
+},
+{
+    dataWorkClass: 'wordpress',
+    imageScr: 'images/wordpress7.jpg',
+    workItemHeading: 'wordpress heading',
+    workItemClass: 'wordpress'
+},
+{
+    dataWorkClass: 'wordpress',
+    imageScr: 'images/wordpress8.jpg',
+    workItemHeading: 'wordpress heading',
+    workItemClass: 'wordpress'
+},
+{
+    dataWorkClass: 'wordpress',
+    imageScr: 'images/wordpress9.jpg',
+    workItemHeading: 'wordpress heading',
+    workItemClass: 'wordpress'
 },
 ];
 
@@ -99,23 +174,26 @@ const createHtmlToAdd = (arr) => {
             </div>
         </div>`)
     });
+    arr.length = 0;
     return htmlToReturn;
 };
 
 const chooseWorkItemsFunc = function (event) {
-    choosedWorkCategoryEvent = event;
-    const $allWorkItems = $('.work-item');
-    const choosedWorkCategory = event.target.dataset.workCategory;
-    const $target = $(event.target);
+    if (event !== undefined) {
+        choosedWorkCategoryEvent = event;
+        const $allWorkItems = $('.work-item');
+        const choosedWorkCategory = event.target.dataset.workCategory;
+        const $target = $(event.target);
 
-    $workCategories.removeClass('work-nav-item-choosed');
+        $workCategories.removeClass('work-nav-item-choosed');
 
-    $target.addClass('work-nav-item-choosed');
-    if (choosedWorkCategory === 'all-work-categories') {
-        $allWorkItems.css('display', 'block');
-    } else {
-        $allWorkItems.css('display', 'none');
-        $allWorkItems.filter(`[data-work-class=${choosedWorkCategory}]`).css('display', 'block');
+        $target.addClass('work-nav-item-choosed');
+        if (choosedWorkCategory === 'all-work-categories') {
+            $allWorkItems.css('display', 'block');
+        } else {
+            $allWorkItems.css('display', 'none');
+            $allWorkItems.filter(`[data-work-class=${choosedWorkCategory}]`).css('display', 'block');
+        };
     };
 };
 
@@ -124,10 +202,18 @@ $('.work-nav-list').mousedown((event) => {
 });
 
 $('.load-more-btn').click(() => {
-    let htmlToAdd = createHtmlToAdd(additionalWorkElementsArray);
-    $workItemsSection.append(htmlToAdd);
+    let htmlToAdd = createHtmlToAdd(additionalWorkElementsArray.length > 0 ? additionalWorkElementsArray : additionalWorkElementsArray2);
+    $('.work .container').append($('<div class="preloader"></div>'));
     $('.load-more-btn').css('display', 'none');
-    chooseWorkItemsFunc(choosedWorkCategoryEvent);
+    setTimeout(() => {
+        $('.preloader').remove();
+        $('.load-more-btn').css('display', 'flex');
+        $workItemsSection.append(htmlToAdd);
+        chooseWorkItemsFunc(choosedWorkCategoryEvent);
+    }, 2000);
+    if (additionalWorkElementsArray.length === 0 && additionalWorkElementsArray2.length === 0) {
+        $('.load-more-btn').remove();
+    }
 });
 
 $('.services-list').mousedown((event) => {
