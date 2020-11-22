@@ -261,3 +261,29 @@ $(document).ready(function(){
 });
 
 
+/************GALLERY*************/
+
+const $grid1 = $('.grid');
+
+const masonryInit = () => {
+    $grid1.masonry({
+        columnWidth: 378,
+        itemSelector: '.grid-item',
+        gutter: 10
+      });
+};
+masonryInit();
+
+
+const $loadMoreGalleryBtn  = $('.gallery-load-more-btn');
+
+$loadMoreGalleryBtn.click(() => {
+    $loadMoreGalleryBtn.remove();
+    $('.gallery').append('<div class="gallery-preloader"></div>');
+    setTimeout(() => {
+        $('.gallery-preloader').remove();
+        $('.grid-item').removeClass('inactive-gallery-item');
+        masonryInit();
+    }, 2000);
+    
+});
