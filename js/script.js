@@ -263,12 +263,12 @@ $(document).ready(function(){
 
 /************GALLERY*************/
 
-const $grid1 = $('.grid');
+const $gallery = $('.gallery-items');
 
 const masonryInit = () => {
-    $grid1.masonry({
+    $gallery.masonry({
         columnWidth: 378,
-        itemSelector: '.grid-item',
+        itemSelector: '.gallery-item',
         gutter: 10
       });
 };
@@ -282,7 +282,7 @@ $loadMoreGalleryBtn.click(() => {
     $('.gallery').append('<div class="gallery-preloader"></div>');
     setTimeout(() => {
         $('.gallery-preloader').remove();
-        $('.grid-item').removeClass('inactive-gallery-item');
+        $('.gallery-item').removeClass('inactive-gallery-item');
         masonryInit();
     }, 2000);
     
